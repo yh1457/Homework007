@@ -77,7 +77,7 @@ void AMyPawn::Move(const FInputActionValue& Input2D)
 	FVector MoveVector = CameraRightVector*InputVector.X + CameraForwardVector*InputVector.Y;
 
 	// 위 방향으로 이동.
-	AddActorWorldOffset(MoveVector*GetWorld()->GetDeltaSeconds()*MoveSpeed);
+	AddActorWorldOffset(MoveVector*GetWorld()->GetDeltaSeconds()*MoveSpeed,true);
 
 	// 이동 방향으로 캐릭터 회전.
 	auto InterpRot =  FMath::RInterpConstantTo(GetActorRotation(),MoveVector.Rotation(),GetWorld()->GetDeltaSeconds(),1080.0f);
